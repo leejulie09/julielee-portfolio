@@ -158,7 +158,7 @@ export default function Menu() {
           </div>
           <div>
             <a className="text" href="#">
-              Behance
+              Twitter
             </a>
             <a className="text" href="#">
               Facebook
