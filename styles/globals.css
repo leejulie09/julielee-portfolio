@@ -1,0 +1,839 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  background: #e5e3dc;
+  /* background: #cdea67; */
+}
+
+/* page */
+.website-content {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  font-family: "Roslindale Display Condensed";
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 4em;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  line-height: 90%;
+}
+
+.navbar > * {
+  position: relative;
+}
+
+.site-header {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12vw;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: -0.4vw;
+}
+
+.header-row {
+  position: relative;
+  line-height: 75%;
+  top: 150px;
+  transition: 1s;
+}
+
+.header-row-wrapper {
+  content: "";
+  position: absolute;
+  top: 140px;
+  left: -20px;
+  width: 110%;
+  height: 150px;
+  background: #e5e3dc;
+  margin: 0 auto;
+}
+
+.row:nth-child(1) {
+  width: 80%;
+  right: 0;
+}
+
+.row:nth-child(2) {
+  position: absolute;
+  width: 90%;
+  right: 0;
+}
+
+.row span {
+  text-transform: lowercase;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 4vw;
+  padding: 0 2em 0 1em;
+}
+
+.row:nth-child(2) span {
+  font-size: 9vw;
+}
+
+.footer-home {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  font-size: 1.8em;
+  padding: 2em 6em;
+}
+
+.pre-loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  color: #e5e3dc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.pre-loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pre-loader-container .header {
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.concat {
+  display: flex;
+}
+
+.header h1 {
+  position: relative;
+  top: 125px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Roslindale Display Condensed";
+  font-weight: 500;
+  font-size: 7vw;
+  line-height: 90%;
+  color: #0a0a0a;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+}
+
+.header h1::before {
+  content: attr(data-text);
+  position: absolute;
+  color: #e5e3dc;
+  overflow: hidden;
+  width: 0%;
+  transition: 1s;
+  animation: fill 2s cubic-bezier(0.6, 0, 0.4, 1) forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fill {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.header-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 120px;
+  left: -20px;
+  width: 110%;
+  height: 120px;
+  background: #0a0a0a;
+  margin: 0 auto;
+}
+
+.pre-loader-btn {
+  position: relative;
+  margin: 3em 0 1em 0;
+  font-family: "Neue Montreal";
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+}
+
+.pre-loader-btn svg {
+  position: relative;
+  width: 80px;
+  top: 0px;
+  padding: 0 0.4em;
+}
+
+/* menu */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+nav a,
+footer a {
+  text-decoration: none;
+  color: #0f0f0f;
+  font-family: "Neue Montreal", sans-serif;
+  padding: 0 1em;
+}
+
+.logo a {
+  font-weight: 600;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#svg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.container-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text {
+  text-decoration: none;
+  font-family: "Confillia Bold", sans-serif;
+  font-size: 175px;
+  font-weight: bolder;
+  line-height: 175px;
+  color: #0f0f0f;
+  height: 175px;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+/* div {
+  display: flex;
+} */
+
+.text:hover .letter,
+.text.play .letter {
+  transform: translateY(-100%);
+}
+
+.text .letter {
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.letter:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.letter:nth-child(2) {
+  transition-delay: 0.015s;
+}
+
+.letter:nth-child(3) {
+  transition-delay: 0.03s;
+}
+
+.letter:nth-child(4) {
+  transition-delay: 0.045s;
+}
+
+.letter:nth-child(5) {
+  transition-delay: 0.06s;
+}
+
+.letter:nth-child(6) {
+  transition-delay: 0.075s;
+}
+
+.letter:nth-child(7) {
+  transition-delay: 0.09s;
+}
+
+.letter:nth-child(8) {
+  transition-delay: 0.105s;
+}
+
+.letter:nth-child(9) {
+  transition-delay: 0.12s;
+}
+
+.letter:nth-child(10) {
+  transition-delay: 0.135s;
+}
+
+.letter:nth-child(11) {
+  transition-delay: 0.15s;
+}
+
+.letter:nth-child(12) {
+  transition-delay: 0.165s;
+}
+
+/* project-list */
+
+.menu {
+  position: absolute;
+  left: 2em;
+  bottom: 2em;
+}
+
+.menu__item {
+  display: inline-block;
+}
+
+.menu__item-image_wrapper {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+  /* transform: translate(-50%, -50%); */
+  width: 600px;
+  height: 400px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.menu__item-image_inner .menu__item-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu__item-text {
+  position: relative;
+  font-family: "Neue World", sans-serif;
+  font-weight: 400;
+  font-size: 4vw;
+  line-height: 1;
+  color: #d1ccbc;
+  opacity: 1;
+  transition: opacity 350ms ease;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu__item:hover .menu__item-text {
+  color: #c24628;
+}
+
+.menu__item:hover .menu__item-image_wrapper {
+  z-index: -2;
+}
+
+/* project-detail */
+
+.img-gallery-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10vh;
+}
+
+.img-gallery-container.order {
+  display: grid;
+  justify-content: stretch;
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-rows: auto auto;
+}
+
+.img {
+  position: relative;
+  margin-bottom: 1em;
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.img.reorder {
+  position: fixed;
+  top: 0;
+  margin: 1em;
+  width: 150px;
+  height: 200px;
+  margin-bottom: 0em;
+}
+
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  bottom: 0;
+}
+
+.btn {
+  width: 10em;
+  height: 5em;
+  z-index: 60;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: "Neue Montreal";
+}
+
+/* contact */
+
+/* nav */
+.logo {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2em;
+  z-index: 10000000;
+  mix-blend-mode: difference;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bolder;
+  color: #c0b1b1;
+  font-family: "Voyage";
+  line-height: 1;
+}
+
+.nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  font-family: "Neue Montreal";
+  font-size: 14px;
+  padding: 1em 2em;
+}
+
+.nav a#main-branch {
+  text-transform: uppercase;
+  background: #000;
+  margin-left: 2em;
+  margin-right: 2em;
+  color: #fff;
+  border-radius: 40px;
+}
+
+.container-contact {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* copy */
+
+.copy {
+  width: 40vw;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+}
+
+.copy-wrapper {
+  width: 90%;
+}
+
+.copy-wrapper h1 {
+  font-family: "Morgenwalsh";
+  text-transform: none;
+  font-size: 4rem;
+  line-height: 1;
+  padding: 0 0 1em 0;
+  font-weight: 500;
+}
+
+.copy-wrapper p {
+  font-family: "Neue Montreal";
+  width: 75%;
+  line-height: 1.5;
+}
+
+/* actual stuff */
+
+.items {
+  width: 20vw;
+  padding: 2em;
+}
+
+.item {
+  margin: 2rem 0;
+  line-height: 0.8;
+}
+
+button {
+  position: relative;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: "Formula Condensed";
+  font-size: 4rem;
+  text-transform: uppercase;
+  display: block;
+  line-height: inherit;
+  cursor: none;
+}
+
+button::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 100%;
+  left: 0;
+  transform: translate(0, -50%);
+  width: 0;
+  height: 3px;
+  background: #000;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+button:hover::after {
+  width: 100%;
+}
+
+/* overlay (form) */
+
+.overlay {
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  top: 0;
+  right: -50%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: none;
+}
+
+.overlay-copy {
+  width: 75%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2em;
+  padding: 1em;
+  background: #fff;
+  color: #000;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+#subtitle {
+  font-family: "Wremena";
+  line-height: 2;
+}
+
+.titlebar {
+  position: relative;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: "Formula Condensed";
+  text-transform: uppercase;
+  font-size: 3rem;
+  z-index: 0;
+}
+
+.titlebar #flag {
+  position: relative;
+  top: -0.2rem;
+  margin: 0 0.4em;
+}
+
+.nav-item {
+  position: relative;
+  top: 70px;
+}
+
+.nav-item-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 500px;
+  height: 120px;
+  background: #000;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 2em 0;
+}
+
+.form > * {
+  position: relative;
+}
+
+.form-action > * {
+  position: relative;
+}
+
+.form input,
+textarea {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.8em;
+  color: #fff;
+  margin: 1em 0;
+  font-size: 1.2rem;
+  cursor: none;
+}
+
+::placeholder,
+textarea {
+  font-family: "Neue Montreal";
+}
+
+.form input:hover,
+textarea:hover {
+  cursor: none;
+}
+
+.form-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit-btn button {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.submit-btn button::after {
+  background: #fff;
+}
+
+#cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 9999;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+/* checkmark styling from w3school */
+
+.checkmark-wrapper {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-family: "Neue Montreal";
+  user-select: none;
+  cursor: none;
+}
+
+.checkmark-wrapper span {
+  margin-top: -3px;
+  font-size: 16px;
+  color: gray;
+}
+
+.checkmark-wrapper input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  cursor: none;
+}
+
+.checkmark-wrapper input:hover {
+  cursor: none;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: 0.05s all ease-in;
+}
+
+.checkmark-wrapper input:checked ~ .checkmark {
+  background-color: #fff;
+  transition: 0.05s all ease-in;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkmark-wrapper input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkmark-wrapper .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transition: 0.05s all ease-in;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  .container {
+    height: 100%;
+    flex-direction: column;
+    justify-content: normal;
+  }
+
+  .copy,
+  .items {
+    width: 100vw !important;
+  }
+
+  .items {
+    padding: 0 1em;
+    align-items: center;
+  }
+
+  .item {
+    align-items: center;
+  }
+
+  .copy {
+    justify-content: center;
+    align-items: center;
+    background: #b2a7a1;
+    padding: 0;
+  }
+
+  .copy-wrapper {
+    width: 100%;
+  }
+
+  .copy-wrapper h1 {
+    display: none;
+  }
+
+  .copy-wrapper p {
+    width: 100%;
+    text-align: center;
+    padding: 6em 0;
+  }
+
+  button {
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  button::after {
+    display: none;
+  }
+
+  .overlay {
+    width: 100vw;
+    right: -100%;
+  }
+}
