@@ -1,6 +1,7 @@
 "use client";
 
 import { useLayoutEffect } from "react";
+import { TweenMax } from "gsap";
 
 export default function Menu() {
   useLayoutEffect(() => {
@@ -88,7 +89,7 @@ export default function Menu() {
   });
   return (
     <>
-      <nav>
+      <nav className="nav-menu">
         <div className="logo">
           <a href="#">Cochi La</a>
         </div>
@@ -158,7 +159,7 @@ export default function Menu() {
           </div>
           <div>
             <a className="text" href="#">
-              Behance
+              Twitter
             </a>
             <a className="text" href="#">
               Facebook
