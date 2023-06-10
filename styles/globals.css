@@ -8,6 +8,8 @@ html,
 body {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
+  /* background: #0a0a0a; */
   background: #e5e3dc;
   /* background: #cdea67; */
 }
@@ -193,7 +195,7 @@ body {
 }
 
 /* menu */
-nav {
+.nav-menu {
   position: fixed;
   top: 0;
   width: 100%;

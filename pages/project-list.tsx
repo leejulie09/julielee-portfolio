@@ -5,8 +5,6 @@ import gsap from "gsap";
 
 export default function ProjectList() {
   useLayoutEffect(() => {
-    const { gsap } = window;
-
     gsap
       .timeline()
       .set(".menu", { autoAlpha: 1 })
