@@ -6,6 +6,25 @@ import LocomotiveScroll from "locomotive-scroll";
 
 export default function ProjectDetail() {
   useLayoutEffect(() => {
+    const loadDependencies = async () => {
+      const [{ default: Flip }, { default: CustomEase }] = await Promise.all([
+        import("https://assets.codepen.io/16327/Flip.min.js"),
+        import(
+          "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CustomEase.min.js"
+        ),
+      ]);
+
+      gsap.registerPlugin(Flip);
+      CustomEase.create("cubic", "0.83, 0, 0.17, 1");
+    };
+
+    loadDependencies();
+
+    // This part of the code will not be executed in a non-browser environment
+    if (typeof document === "undefined") {
+      return;
+    }
+
     const script1 = document.createElement("script");
     script1.src =
       "https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js";
@@ -50,10 +69,9 @@ export default function ProjectDetail() {
     });
 
     return () => {
+      // Clean up the added scripts when the component unmounts
       document.body.removeChild(script1);
       document.body.removeChild(script2);
-      document.body.removeChild(script3);
-      document.body.removeChild(script4);
     };
   });
 

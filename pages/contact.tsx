@@ -101,7 +101,6 @@ export default function Contact() {
 
   return (
     <>
-    {/* <!-- nav --> */}
     <div className="logo"><a href="#">The Hiring Chain</a></div>
     <div className="nav">
       <div className="nav-items primary">
@@ -160,7 +159,6 @@ export default function Contact() {
       </div>
     </div>
 
-    {/* <!-- overlay (form) --> */}
     <div className="overlay">
       <div className="close-btn" id="close-btn">
         <ion-icon name="close-outline"></ion-icon>
@@ -195,7 +193,7 @@ export default function Contact() {
         </div>
       </div>
     </div>
-    {/* <!-- phew.. overlay ends  --> */}
+    
     <div id="cursor"></div>
     </>
   );

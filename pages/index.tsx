@@ -1,129 +1,177 @@
 "use client";
 
 import { useLayoutEffect } from "react";
-import gsap from "gsap";
+import { TweenMax } from "gsap";
 
-export default function Home() {
+export default function Menu() {
   useLayoutEffect(() => {
-    const tl = gsap.timeline();
+    let elements = document.querySelectorAll(".text");
 
-    function myFunction() {
-      tl.to(".pre-loader", 1, {
-        opacity: 0,
-        display: "none",
-        ease: "power2.inOut",
+    elements.forEach((element) => {
+      let innerText = element.innerText;
+      element.innerHTML = "";
+
+      let textContainer = document.createElement("div");
+      textContainer.classList.add("block");
+
+      for (let letter of innerText) {
+        let span = document.createElement("span");
+        span.innerText = letter.trim() === "" ? "\xa0" : letter;
+        span.classList.add("letter");
+        textContainer.appendChild(span);
+      }
+
+      element.appendChild(textContainer);
+      element.appendChild(textContainer.cloneNode(true));
+    });
+
+    elements.forEach((element) => {
+      element.addEventListener("mouseover", () => {
+        element.classList.remove("play");
       });
+    });
 
-      tl.to(
-        ".header-row",
-        0.8,
-        {
-          top: "0",
-          ease: "power4.inOut",
-          stagger: {
-            amount: 0.2,
-          },
-        },
-        "-=1.2"
-      );
+    const svg = document.querySelector("#svg");
+    const mouse = svg.createSVGPoint();
 
-      tl.from(
-        ".navbar > *, .footer",
-        2,
-        {
-          y: "40",
-          opacity: 0,
-          ease: "power4.inOut",
-          stagger: {
-            amount: 0.2,
-          },
-        },
-        "-=1"
-      );
+    const leftEye = createEye("#left-eye");
+    const rightEye = createEye("#right-eye");
+
+    let requestId = null;
+
+    window.addEventListener("mousemove", onMouseMove);
+
+    function onFrame() {
+      let point = mouse.matrixTransform(svg.getScreenCTM().inverse());
+
+      leftEye.rotateTo(point);
+      rightEye.rotateTo(point);
+
+      requestId = null;
     }
 
-    tl.to(".header > h1", 2, {
-      top: "0",
-      ease: "power3.inOut",
-      stagger: {
-        amount: 0.3,
-      },
-    }).to(".pre-loader-btn", 0.3, {
-      opacity: 1,
-      delay: 2,
-    });
-  });
+    function onMouseMove(event) {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
 
+      if (!requestId) {
+        requestId = requestAnimationFrame(onFrame);
+      }
+    }
+
+    function createEye(selector) {
+      const element = document.querySelector(selector);
+
+      TweenMax.set(element, {
+        transformOrigin: "center",
+      });
+
+      let bbox = element.getBBox();
+      let centerX = bbox.x + bbox.width / 2;
+      let centerY = bbox.y + bbox.height / 2;
+
+      function rotateTo(point) {
+        let dx = point.x - centerX;
+        let dy = point.y - centerY;
+
+        let angle = Math.atan2(dy, dx);
+
+        TweenMax.to(element, 0.3, {
+          rotation: angle + "_rad_short",
+        });
+      }
+
+      return {
+        element,
+        rotateTo,
+      };
+    }
+  });
   return (
-    <>
-      <div className="website-content">
-        <div className="navbar">
-          <div className="logo">
-            Chiara
-            <br />
-            Luzzana
-          </div>
-          <div className="menu-icon">Menu</div>
+    <div className="menu-container">
+      <nav className="nav-menu">
+        <div className="logo">
+          <a href="#">Cochi La</a>
         </div>
-        <div className="site-header">
-          <div className="row">
-            <div className="header-row">
-              <span>the</span>purity
-            </div>
-            <div className="header-row-wrapper"></div>
+        <div className="links">
+          <a href="#">Services</a>
+          <a href="#">Our Work</a>
+          <a href="#">About Us</a>
+          <a href="#">Insights</a>
+        </div>
+        <div className="contact">
+          <a href="#">Contact</a>
+        </div>
+      </nav>
+      <footer>
+        <div className="mail">
+          <a href="#">hello@domain.com</a>
+        </div>
+        <div className="location">
+          <a href="#">Vancouver, British Columbia</a>
+        </div>
+      </footer>
+      <div className="wrapper">
+        <svg id="svg" viewBox="0 0 1000 1000">
+          <g id="left-eye">
+            <circle
+              className="eye-outer"
+              cx="400"
+              cy="500"
+              r="100"
+              stroke="#0f0f0f"
+              stroke-width="2"
+              fill="#fff"
+            />
+            <circle
+              className="eye-inner"
+              cx="480"
+              cy="500"
+              r="20"
+              fill="#0f0f0f"
+            />
+          </g>
+
+          <g id="right-eye">
+            <circle
+              className="eye-outer"
+              cx="600"
+              cy="500"
+              r="100"
+              stroke="#0f0f0f"
+              stroke-width="2"
+              fill="#fff"
+            />
+            <circle
+              className="eye-inner"
+              cx="680"
+              cy="500"
+              r="20"
+              fill="#0f0f0f"
+            />
+          </g>
+        </svg>
+        <div className="container-menu">
+          <div>
+            <a className="text" href="#">
+              Instagram
+            </a>
           </div>
-          <div className="row">
-            <div className="header-row">
-              <span>of</span>noise
-            </div>
-            <div className="header-row-wrapper"></div>
+          <div>
+            <a className="text" href="#">
+              Twitter
+            </a>
+            <a className="text" href="#">
+              Facebook
+            </a>
+          </div>
+          <div>
+            <a className="text" href="#">
+              LinkedIn
+            </a>
           </div>
         </div>
-        <div className="footer-home">"Everyday life is her sound"</div>
       </div>
-      <div className="pre-loader">
-        <div className="pre-loader-container">
-          <div className="pre-loader-header">
-            <div className="header">
-              <h1>A creator of</h1>
-              <div className="header-wrapper"></div>
-            </div>
-            <div className="header concat">
-              <h1 data-text="sound">sound</h1>
-              &nbsp; &nbsp;
-              <h1>From pure</h1>
-              <div className="header-wrapper"></div>
-            </div>
-            <div className="header">
-              <h1>noise to melody,</h1>
-              <div className="header-wrapper"></div>
-            </div>
-            <div className="header">
-              <h1>everyday life</h1>
-              <div className="header-wrapper"></div>
-            </div>
-            <div className="header concat">
-              <h1>is her</h1>
-              &nbsp; &nbsp;
-              <h1 data-text="symphony">symphony</h1>
-              <div className="header-wrapper"></div>
-            </div>
-          </div>
-          <div className="pre-loader-btn" onclick="myFunction()">
-            <div className="btn">
-              Click anywhere
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 10">
-                <defs></defs>
-                <path
-                  fill="#e2e2dd"
-                  d="M59.2,9.6V6.2h-58v-2c0,0,0,0,0,0h58V0.7L67,5.1L59.2,9.6z"
-                ></path>
-              </svg>
-              to enable the sound
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    </div>
   );
 }

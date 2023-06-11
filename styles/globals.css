@@ -266,6 +266,10 @@ footer a {
   display: flex;
 } */
 
+.menu-container div {
+  display: flex;
+}
+
 .text:hover .letter,
 .text.play .letter {
   transform: translateY(-100%);
