@@ -4,7 +4,7 @@ import { useLayoutEffect } from "react";
 import gsap from "gsap";
 import LocomotiveScroll from "locomotive-scroll";
 
-export default function ProjectDetail() {
+export default function Project1() {
   useLayoutEffect(() => {
     const loadDependencies = async () => {
       const [{ default: Flip }, { default: CustomEase }] = await Promise.all([
