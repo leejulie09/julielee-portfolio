@@ -3,7 +3,7 @@
 import { useLayoutEffect } from "react";
 import { TweenMax } from "gsap";
 
-export default function Menu() {
+export default function Home() {
   useLayoutEffect(() => {
     let elements = document.querySelectorAll(".text");
 
@@ -154,20 +154,20 @@ export default function Menu() {
         <div className="container-menu">
           <div>
             <a className="text" href="#">
-              Instagram
+              About
             </a>
           </div>
           <div>
             <a className="text" href="#">
-              Twitter
+              Work
             </a>
             <a className="text" href="#">
-              Facebook
+              Contact
             </a>
           </div>
           <div>
             <a className="text" href="#">
-              LinkedIn
+              Blog
             </a>
           </div>
         </div>
