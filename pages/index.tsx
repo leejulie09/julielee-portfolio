@@ -88,21 +88,7 @@ export default function Menu() {
     }
   });
   return (
-    <div className="menu-container">
-      <nav className="nav-menu">
-        <div className="logo">
-          <a href="#">Cochi La</a>
-        </div>
-        <div className="links">
-          <a href="#">Services</a>
-          <a href="#">Our Work</a>
-          <a href="#">About Us</a>
-          <a href="#">Insights</a>
-        </div>
-        <div className="contact">
-          <a href="#">Contact</a>
-        </div>
-      </nav>
+    <div className="home-container">
       <footer>
         <div className="mail">
           <a href="#">hello@domain.com</a>
@@ -111,7 +97,7 @@ export default function Menu() {
           <a href="#">Vancouver, British Columbia</a>
         </div>
       </footer>
-      <div className="wrapper">
+      <div className="home-wrapper">
         <svg id="svg" viewBox="0 0 1000 1000">
           <g id="left-eye">
             <circle
@@ -151,10 +137,10 @@ export default function Menu() {
             />
           </g>
         </svg>
-        <div className="container-menu">
+        <div className="home-subcontainer">
           <div>
             <a className="text" href="#">
-              Instagram
+              Instagram Instagram
             </a>
           </div>
           <div>
@@ -162,12 +148,12 @@ export default function Menu() {
               Twitter
             </a>
             <a className="text" href="#">
-              Facebook
+              Facebook Facebook
             </a>
           </div>
           <div>
             <a className="text" href="#">
-              LinkedIn
+              LinkedIn LinkedIn
             </a>
           </div>
         </div>
