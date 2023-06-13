@@ -62,7 +62,7 @@ export default function Projects() {
   });
 
   return (
-    <div className="container-project-list">
+    <div className="container-projects">
       <nav className="menu">
         <div className="menu__item">
           <div className="menu__item-image_wrapper">
