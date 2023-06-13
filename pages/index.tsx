@@ -1,160 +1,127 @@
 "use client";
 
 import { useLayoutEffect } from "react";
-import { TweenMax } from "gsap";
+import gsap from "gsap";
 
-export default function Menu() {
+export default function Home() {
   useLayoutEffect(() => {
-    let elements = document.querySelectorAll(".text");
+    const tl = gsap.timeline({ paused: true });
 
-    elements.forEach((element) => {
-      let innerText = element.innerText;
-      element.innerHTML = "";
-
-      let textContainer = document.createElement("div");
-      textContainer.classList.add("block");
-
-      for (let letter of innerText) {
-        let span = document.createElement("span");
-        span.innerText = letter.trim() === "" ? "\xa0" : letter;
-        span.classList.add("letter");
-        textContainer.appendChild(span);
-      }
-
-      element.appendChild(textContainer);
-      element.appendChild(textContainer.cloneNode(true));
-    });
-
-    elements.forEach((element) => {
-      element.addEventListener("mouseover", () => {
-        element.classList.remove("play");
-      });
-    });
-
-    const svg = document.querySelector("#svg");
-    const mouse = svg.createSVGPoint();
-
-    const leftEye = createEye("#left-eye");
-    const rightEye = createEye("#right-eye");
-
-    let requestId = null;
-
-    window.addEventListener("mousemove", onMouseMove);
-
-    function onFrame() {
-      let point = mouse.matrixTransform(svg.getScreenCTM().inverse());
-
-      leftEye.rotateTo(point);
-      rightEye.rotateTo(point);
-
-      requestId = null;
-    }
-
-    function onMouseMove(event) {
-      mouse.x = event.clientX;
-      mouse.y = event.clientY;
-
-      if (!requestId) {
-        requestId = requestAnimationFrame(onFrame);
-      }
-    }
-
-    function createEye(selector) {
-      const element = document.querySelector(selector);
-
-      TweenMax.set(element, {
-        transformOrigin: "center",
-      });
-
-      let bbox = element.getBBox();
-      let centerX = bbox.x + bbox.width / 2;
-      let centerY = bbox.y + bbox.height / 2;
-
-      function rotateTo(point) {
-        let dx = point.x - centerX;
-        let dy = point.y - centerY;
-
-        let angle = Math.atan2(dy, dx);
-
-        TweenMax.to(element, 0.3, {
-          rotation: angle + "_rad_short",
-        });
-      }
-
-      return {
-        element,
-        rotateTo,
+    function openNav() {
+      animateOpenNav();
+      const navBtn = document.getElementById("menu-toggle-btn");
+      navBtn.onclick = function (e) {
+        navBtn.classList.toggle("active");
+        tl.reversed(!tl.reversed());
       };
+    }
+
+    openNav();
+
+    function animateOpenNav() {
+      tl.to("#nav-container", 0.2, {
+        autoAlpha: 1,
+        delay: 0.1,
+      });
+
+      tl.to(
+        ".site-logo",
+        0.2,
+        {
+          color: "#fff",
+        },
+        "-=0.1"
+      );
+
+      tl.from(".flex > div", 0.4, {
+        opacity: 0,
+        y: 10,
+        stagger: {
+          amount: 0.04,
+        },
+      });
+
+      tl.to(
+        ".nav-link > a",
+        0.8,
+        {
+          top: 0,
+          ease: "power2.inOut",
+          stagger: {
+            amount: 0.1,
+          },
+        },
+        "-=0.4"
+      );
+
+      tl.from(
+        ".nav-footer",
+        0.3,
+        {
+          opacity: 0,
+        },
+        "-=0.5"
+      ).reverse();
     }
   });
   return (
     <div className="home-container">
-      <footer>
-        <div className="mail">
-          <a href="#">hello@domain.com</a>
-        </div>
-        <div className="location">
-          <a href="#">Vancouver, British Columbia</a>
-        </div>
-      </footer>
-      <div className="home-wrapper">
-        <svg id="svg" viewBox="0 0 1000 1000">
-          <g id="left-eye">
-            <circle
-              className="eye-outer"
-              cx="400"
-              cy="500"
-              r="100"
-              stroke="#0f0f0f"
-              stroke-width="2"
-              fill="#fff"
-            />
-            <circle
-              className="eye-inner"
-              cx="480"
-              cy="500"
-              r="20"
-              fill="#0f0f0f"
-            />
-          </g>
-
-          <g id="right-eye">
-            <circle
-              className="eye-outer"
-              cx="600"
-              cy="500"
-              r="100"
-              stroke="#0f0f0f"
-              stroke-width="2"
-              fill="#fff"
-            />
-            <circle
-              className="eye-inner"
-              cx="680"
-              cy="500"
-              r="20"
-              fill="#0f0f0f"
-            />
-          </g>
-        </svg>
-        <div className="home-subcontainer">
-          <div>
-            <a className="text" href="#">
-              Instagram Instagram
-            </a>
+      <div className="navbar">
+        <div className="site-logo">Plastic</div>
+        <div className="menu-toggle">
+          <div id="menu-toggle-btn">
+            <span></span>
           </div>
-          <div>
-            <a className="text" href="#">
-              Twitter
-            </a>
-            <a className="text" href="#">
-              Facebook Facebook
-            </a>
+        </div>
+      </div>
+      <div className="header">
+        We transform <br />
+        ideas into digital <br />
+        outcomes
+      </div>
+      <div id="nav-container">
+        <div className="nav">
+          <div className="col flex">
+            <div className="nav-logo">c/</div>
+            <div className="nav-socials">
+              <a href="#">Behance</a>
+              <a href="#">Twitter</a>
+              <a href="#">Instagram</a>
+              <a href="#">LinkedIn</a>
+              <a href="#">Medium</a>
+            </div>
           </div>
-          <div>
-            <a className="text" href="#">
-              LinkedIn LinkedIn
-            </a>
+          <div className="col">
+            <div className="nav-link">
+              <a href="#">Work</a>
+              <div className="nav-item-wrapper"></div>
+            </div>
+            <div className="nav-link">
+              <a href="#">Services</a>
+              <div className="nav-item-wrapper"></div>
+            </div>
+            <div className="nav-link">
+              <a href="#">About</a>
+              <div className="nav-item-wrapper"></div>
+            </div>
+            <div className="nav-link">
+              <a href="#">Manifesto</a>
+              <div className="nav-item-wrapper"></div>
+            </div>
+            <div className="nav-link">
+              <a href="#">Contact</a>
+              <div className="nav-item-wrapper"></div>
+            </div>
+          </div>
+        </div>
+        <div className="nav-footer">
+          <div className="links">
+            <a href="#">Privacy policy</a>
+            <a href="#">Cookie policy</a>
+            <a href="#">Terms & Conditions</a>
+          </div>
+          <div className="contact">
+            <a href="#">codegridweb@gmail.com</a>
           </div>
         </div>
       </div>
