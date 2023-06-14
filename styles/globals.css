@@ -431,7 +431,7 @@ body {
   z-index: -2;
 }
 
-/* project-detail */
+/* project */
 
 .img-gallery-container {
   width: 100vw;
@@ -452,7 +452,7 @@ body {
   grid-template-rows: auto auto;
 }
 
-.img {
+.project-img {
   position: relative;
   margin-bottom: 1em;
   width: 400px;
@@ -511,7 +511,7 @@ img {
   font-family: "Voyage";
   line-height: 1;
 }
-
+/* 
 .nav {
   position: fixed;
   width: 100%;
@@ -535,7 +535,7 @@ img {
   margin-right: 2em;
   color: #fff;
   border-radius: 40px;
-}
+} */
 
 .container-contact {
   width: 100%;

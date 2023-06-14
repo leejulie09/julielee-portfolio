@@ -99,7 +99,7 @@ export default function Home() {
               <div className="nav-item-wrapper"></div>
             </div>
             <div className="nav-link">
-              <a href="#">Contact</a>
+              <a href="/contact">Contact</a>
               <div className="nav-item-wrapper"></div>
             </div>
           </div>
