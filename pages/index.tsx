@@ -4,7 +4,6 @@ import { useLayoutEffect } from "react";
 import gsap from "gsap";
 
 export default function Home() {
-export default function Home() {
   useLayoutEffect(() => {
     const tl = gsap.timeline({ paused: true });
 
@@ -81,7 +80,7 @@ export default function Home() {
         outcomes
       </div>
       <div id="nav-container">
-        <div className="nav">
+        <div className="home-nav">
           <div className="col flex">
             <div className="nav-logo">c/</div>
             <div className="nav-socials">
