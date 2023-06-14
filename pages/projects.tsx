@@ -3,7 +3,7 @@
 import { useLayoutEffect } from "react";
 import gsap from "gsap";
 
-export default function ProjectList() {
+export default function Projects() {
   useLayoutEffect(() => {
     gsap
       .timeline()
@@ -62,7 +62,7 @@ export default function ProjectList() {
   });
 
   return (
-    <div className="container-project-list">
+    <div className="container-projects">
       <nav className="menu">
         <div className="menu__item">
           <div className="menu__item-image_wrapper">

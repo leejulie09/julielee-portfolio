@@ -4,6 +4,7 @@ import { useLayoutEffect } from "react";
 import gsap from "gsap";
 
 export default function Home() {
+export default function Home() {
   useLayoutEffect(() => {
     const tl = gsap.timeline({ paused: true });
 
