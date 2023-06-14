@@ -84,28 +84,18 @@ export default function Home() {
           <div className="col flex">
             <div className="nav-logo">c/</div>
             <div className="nav-socials">
-              <a href="#">Behance</a>
-              <a href="#">Twitter</a>
-              <a href="#">Instagram</a>
+              <a href="#">Blog</a>
+              <a href="#">Github</a>
               <a href="#">LinkedIn</a>
-              <a href="#">Medium</a>
             </div>
           </div>
           <div className="col">
             <div className="nav-link">
-              <a href="#">Work</a>
+              <a href="/about">About</a>
               <div className="nav-item-wrapper"></div>
             </div>
             <div className="nav-link">
-              <a href="#">Services</a>
-              <div className="nav-item-wrapper"></div>
-            </div>
-            <div className="nav-link">
-              <a href="#">About</a>
-              <div className="nav-item-wrapper"></div>
-            </div>
-            <div className="nav-link">
-              <a href="#">Manifesto</a>
+              <a href="/projects">Work</a>
               <div className="nav-item-wrapper"></div>
             </div>
             <div className="nav-link">
@@ -121,7 +111,7 @@ export default function Home() {
             <a href="#">Terms & Conditions</a>
           </div>
           <div className="contact">
-            <a href="#">codegridweb@gmail.com</a>
+            <a href="#">leejulie09@gmail.com</a>
           </div>
         </div>
       </div>
