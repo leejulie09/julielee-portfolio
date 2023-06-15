@@ -21,7 +21,7 @@ export default function Educere() {
     CustomEase.create("cubic", "0.83, 0, 0.17, 1");
 
     const handleButtonClick = () => {
-      let state = Flip.getState(".img-gallery-container, .img");
+      let state = Flip.getState(".img-gallery-container, .project-img");
 
       gallery.classList.toggle("order");
       images.forEach((wr, i) => {
@@ -37,7 +37,7 @@ export default function Educere() {
     };
 
     const gallery = document.querySelector(".img-gallery-container");
-    const images = gsap.utils.toArray(".img");
+    const images = gsap.utils.toArray(".project-img");
     const button = document.querySelector(".btn");
 
     button.addEventListener("click", handleButtonClick);
@@ -53,34 +53,34 @@ export default function Educere() {
     <>
       <div className="img-gallery" data-scroll-container>
         <div className="img-gallery-container" data-scroll>
-          <div className="img">
+          <div className="project-img">
             <img src="./images/img-1.png" />
           </div>
-          <div className="img">
+          <div className="project-img">
             <img src="./images/img-2.png" />
           </div>
-          <div className="img">
+          <div className="project-img">
             <img src="./images/img-10.png" />
           </div>
-          <div className="img">
+          <div className="project-img">
             <img src="./images/img-4.png" />
           </div>
-          <div className="img">
+          <div className="project-img">
             <img src="./images/img-5.png" />
           </div>
-          <div className="img">
+          <div className="project-img">
             <img src="./images/img-6.png" />
           </div>
-          <div className="img">
+          <div className="project-img">
             <img src="./images/img-7.png" />
           </div>
-          <div className="img">
+          <div className="project-img">
             <img src="./images/img-8.png" />
           </div>
-          <div className="img">
+          <div className="project-img">
             <img src="./images/img-9.png" />
           </div>
-          <div className="img">
+          <div className="project-img">
             <img src="./images/img-2.png" />
           </div>
         </div>

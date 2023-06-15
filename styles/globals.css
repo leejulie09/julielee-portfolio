@@ -431,7 +431,7 @@ body {
   z-index: -2;
 }
 
-/* project-detail */
+/* project */
 
 .img-gallery-container {
   width: 100vw;
@@ -452,7 +452,7 @@ body {
   grid-template-rows: auto auto;
 }
 
-.img {
+.project-img {
   position: relative;
   margin-bottom: 1em;
   width: 400px;
@@ -510,31 +510,6 @@ img {
   color: #c0b1b1;
   font-family: "Voyage";
   line-height: 1;
-}
-
-.nav {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 2em;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #000;
-  font-family: "Neue Montreal";
-  font-size: 14px;
-  padding: 1em 2em;
-}
-
-.nav a#main-branch {
-  text-transform: uppercase;
-  background: #000;
-  margin-left: 2em;
-  margin-right: 2em;
-  color: #fff;
-  border-radius: 40px;
 }
 
 .container-contact {
