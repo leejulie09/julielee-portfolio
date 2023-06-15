@@ -3,7 +3,7 @@
 import { useLayoutEffect } from "react";
 import gsap from "gsap";
 
-export default function ProjectList() {
+export default function Projects() {
   useLayoutEffect(() => {
     gsap
       .timeline()

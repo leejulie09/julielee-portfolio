@@ -262,9 +262,9 @@ footer a {
   text-transform: uppercase;
 }
 
-/* div {
+.menu-container div {
   display: flex;
-} */
+}
 
 .text:hover .letter,
 .text.play .letter {

@@ -1,39 +1,26 @@
 "use client";
 
-import { useLayoutEffect } from "react";
-import gsap from "gsap";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { Flip } from "../../public/js/Flip.min.js";
 import LocomotiveScroll from "locomotive-scroll";
+import { CustomEase } from "../../public/js/CustomEase.min.js";
 
-export default function ProjectDetail() {
-  useLayoutEffect(() => {
-    const script1 = document.createElement("script");
-    script1.src =
-      "https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js";
-    document.body.appendChild(script1);
+export default function Educere() {
+  const scrollerRef = useRef(null);
 
-    const script2 = document.createElement("script");
-    script2.src = "https://unpkg.co/gsap@3/dist/gsap.min.js";
-    document.body.appendChild(script2);
-
-    const script3 = document.createElement("script");
-    script3.src = "https://assets.codepen.io/16327/Flip.min.js";
-    document.body.appendChild(script3);
-
-    const script4 = document.createElement("script");
-    script4.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CustomEase.min.js";
-    document.body.appendChild(script4);
+  useEffect(() => {
+    if (typeof document === "undefined") return;
 
     const scroller = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
     });
+
     gsap.registerPlugin(Flip);
     CustomEase.create("cubic", "0.83, 0, 0.17, 1");
-    const gallery = document.querySelector(".img-gallery-container"),
-      images = gsap.utils.toArray(".img");
 
-    document.querySelector(".btn").addEventListener("click", () => {
+    const handleButtonClick = () => {
       let state = Flip.getState(".img-gallery-container, .img");
 
       gallery.classList.toggle("order");
@@ -47,16 +34,21 @@ export default function ProjectDetail() {
         stagger: 0.05,
         ease: "cubic",
       });
-    });
+    };
+
+    const gallery = document.querySelector(".img-gallery-container");
+    const images = gsap.utils.toArray(".img");
+    const button = document.querySelector(".btn");
+
+    button.addEventListener("click", handleButtonClick);
 
     return () => {
-      document.body.removeChild(script1);
-      document.body.removeChild(script2);
-      document.body.removeChild(script3);
-      document.body.removeChild(script4);
+      if (scroller) {
+        scroller.destroy();
+      }
+      button.removeEventListener("click", handleButtonClick);
     };
-  });
-
+  }, []);
   return (
     <>
       <div className="img-gallery" data-scroll-container>
