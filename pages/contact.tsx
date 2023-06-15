@@ -95,17 +95,7 @@ export default function Contact() {
       <div className="logo">
         <a href="#">The Hiring Chain</a>
       </div>
-      {/* <div className="nav">
-        <div className="nav-items primary">
-          <a href="#" id="main-branch">
-            Hire Now
-          </a>
-          <a href="#">Share</a>
-        </div>
-        <div className="nav-items">
-          <a href="#">About</a>
-        </div>
-      </div> */}
+
       <div className="container">
         {/* <!-- copy --> */}
         <div className="copy">

@@ -48,7 +48,7 @@ body {
   text-transform: uppercase;
   text-align: center;
 } */
-
+/* 
 #menu-toggle-btn {
   margin-top: 5px;
   display: flex;
@@ -100,7 +100,7 @@ body {
 
 .active:hover span::before {
   top: unset;
-}
+} */
 
 #nav-container {
   position: fixed;
@@ -180,7 +180,7 @@ body {
   bottom: 0;
   padding: 2em 1em;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
 }
 
 .nav-footer a {
@@ -191,7 +191,7 @@ body {
 }
 
 @media (max-width: 900px) {
-  .nav {
+  .home-nav {
     flex-direction: column-reverse;
   }
 
@@ -659,7 +659,6 @@ button:hover::after {
   top: 60px;
   left: 0;
   width: 500px;
-  height: 120px;
   background: #000;
   margin: 0 auto;
 }

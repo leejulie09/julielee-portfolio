@@ -18,7 +18,7 @@ export default function Home() {
       });
 
       tl.from(".flex > div", 0.4, {
-        opacity: 0,
+        opacity: 1,
         y: 10,
         stagger: {
           amount: 0.04,
@@ -27,7 +27,7 @@ export default function Home() {
 
       tl.to(
         ".nav-link > a",
-        0.8,
+        0.3,
         {
           top: 0,
           ease: "power2.inOut",
@@ -42,7 +42,7 @@ export default function Home() {
         ".nav-footer",
         0.3,
         {
-          opacity: 0,
+          opacity: 1,
         },
         "-=0.5"
       );
@@ -69,7 +69,7 @@ export default function Home() {
       <div id="nav-container">
         <div className="home-nav">
           <div className="col flex">
-            <div className="nav-logo">c/</div>
+            <div className="nav-logo">:)</div>
             <div className="nav-socials">
               <a href="#">Blog</a>
               <a href="#">Github</a>
@@ -92,11 +92,6 @@ export default function Home() {
           </div>
         </div>
         <div className="nav-footer">
-          <div className="links">
-            <a href="#">Privacy policy</a>
-            <a href="#">Cookie policy</a>
-            <a href="#">Terms & Conditions</a>
-          </div>
           <div className="contact">
             <a href="#">leejulie09@gmail.com</a>
           </div>
