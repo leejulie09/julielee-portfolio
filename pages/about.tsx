@@ -79,47 +79,31 @@ export default function Home() {
             <div className="header-row-wrapper"></div>
           </div>
         </div>
-        <div className="footer-home">"Everyday life is her sound"</div>
+        <div className="footer-about">"Everyday life is her sound"</div>
       </div>
       <div className="pre-loader">
         <div className="pre-loader-container">
           <div className="pre-loader-header">
-            <div className="header">
-              <h1>A creator of</h1>
+            <div className="header concat">
+              <h1 data-text="React">React</h1>
+              &nbsp; &nbsp;
+              <h1>based</h1>
               <div className="header-wrapper"></div>
             </div>
             <div className="header concat">
-              <h1 data-text="sound">sound</h1>
+              <h1 data-text="frontend">frontend</h1>
               &nbsp; &nbsp;
-              <h1>From pure</h1>
               <div className="header-wrapper"></div>
             </div>
             <div className="header">
-              <h1>noise to melody,</h1>
-              <div className="header-wrapper"></div>
-            </div>
-            <div className="header">
-              <h1>everyday life</h1>
+              <h1>developer</h1>
               <div className="header-wrapper"></div>
             </div>
             <div className="header concat">
-              <h1>is her</h1>
+              <h1 data-text="Julie">Julie</h1>
               &nbsp; &nbsp;
-              <h1 data-text="symphony">symphony</h1>
+              <h1>Lee</h1>
               <div className="header-wrapper"></div>
-            </div>
-          </div>
-          <div className="pre-loader-btn" onclick="myFunction()">
-            <div className="btn">
-              Click anywhere
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 10">
-                <defs></defs>
-                <path
-                  fill="#e2e2dd"
-                  d="M59.2,9.6V6.2h-58v-2c0,0,0,0,0,0h58V0.7L67,5.1L59.2,9.6z"
-                ></path>
-              </svg>
-              to enable the sound
             </div>
           </div>
         </div>
