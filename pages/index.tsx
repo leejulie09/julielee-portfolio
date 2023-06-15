@@ -71,9 +71,15 @@ export default function Home() {
           <div className="col flex">
             <div className="nav-logo">:)</div>
             <div className="nav-socials">
-              <a href="#">Blog</a>
-              <a href="#">Github</a>
-              <a href="#">LinkedIn</a>
+              <a href="https://selonjulie.tistory.com/" target="_blank">
+                Blog
+              </a>
+              <a href="https://github.com/leejulie09" target="_blank">
+                Github
+              </a>
+              <a href="https://www.linkedin.com/in/leejulie09/" target="_blank">
+                LinkedIn
+              </a>
             </div>
           </div>
           <div className="col">
