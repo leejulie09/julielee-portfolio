@@ -5,18 +5,7 @@ import gsap from "gsap";
 
 export default function Home() {
   useLayoutEffect(() => {
-    const tl = gsap.timeline({ paused: true });
-
-    function openNav() {
-      animateOpenNav();
-      const navBtn = document.getElementById("menu-toggle-btn");
-      navBtn.onclick = function (e) {
-        navBtn.classList.toggle("active");
-        tl.reversed(!tl.reversed());
-      };
-    }
-
-    openNav();
+    const tl = gsap.timeline();
 
     function animateOpenNav() {
       tl.to("#nav-container", 0.2, {
@@ -24,14 +13,9 @@ export default function Home() {
         delay: 0.1,
       });
 
-      tl.to(
-        ".site-logo",
-        0.2,
-        {
-          color: "#fff",
-        },
-        "-=0.1"
-      );
+      tl.to(".site-logo", 0.2, {
+        color: "#fff",
+      });
 
       tl.from(".flex > div", 0.4, {
         opacity: 0,
@@ -61,24 +45,27 @@ export default function Home() {
           opacity: 0,
         },
         "-=0.5"
-      ).reverse();
+      );
     }
-  });
+
+    animateOpenNav();
+  }, []);
+
   return (
     <div className="home-container">
       <div className="navbar">
-        <div className="site-logo">Plastic</div>
-        <div className="menu-toggle">
+        <div className="site-logo">Julie</div>
+        {/* <div className="menu-toggle">
           <div id="menu-toggle-btn">
             <span></span>
           </div>
-        </div>
+        </div> */}
       </div>
-      <div className="header">
+      {/* <div className="header">
         We transform <br />
         ideas into digital <br />
         outcomes
-      </div>
+      </div> */}
       <div id="nav-container">
         <div className="home-nav">
           <div className="col flex">
@@ -99,7 +86,7 @@ export default function Home() {
               <div className="nav-item-wrapper"></div>
             </div>
             <div className="nav-link">
-              <a href="#">Contact</a>
+              <a href="/contact">Contact</a>
               <div className="nav-item-wrapper"></div>
             </div>
           </div>
