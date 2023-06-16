@@ -2,6 +2,7 @@
 
 import { useLayoutEffect } from "react";
 import gsap from "gsap";
+import Link from "next/link";
 
 export default function Home() {
   useLayoutEffect(() => {
@@ -18,7 +19,7 @@ export default function Home() {
       });
 
       tl.from(".flex > div", 0.4, {
-        opacity: 1,
+        opacity: 0,
         y: 10,
         stagger: {
           amount: 0.04,
@@ -42,7 +43,7 @@ export default function Home() {
         ".nav-footer",
         0.3,
         {
-          opacity: 1,
+          opacity: 0,
         },
         "-=0.5"
       );
@@ -84,15 +85,15 @@ export default function Home() {
           </div>
           <div className="col">
             <div className="nav-link">
-              <a href="/about">About</a>
+              <Link href="/about">About</Link>
               <div className="nav-item-wrapper"></div>
             </div>
             <div className="nav-link">
-              <a href="/projects">Work</a>
+              <Link href="/projects">Work</Link>
               <div className="nav-item-wrapper"></div>
             </div>
             <div className="nav-link">
-              <a href="/contact">Contact</a>
+              <Link href="/contact">Contact</Link>
               <div className="nav-item-wrapper"></div>
             </div>
           </div>

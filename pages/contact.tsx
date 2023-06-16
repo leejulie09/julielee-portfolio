@@ -7,23 +7,13 @@ export default function Contact() {
   useLayoutEffect(() => {
     const cursor = document.getElementById("cursor");
     const tl = gsap.timeline({ paused: true });
+    const tl2 = gsap.timeline({ paused: false });
+
     tl.to(cursor, { duration: 0.2, scale: 1.5, opacity: 1 });
 
     const buttons = document.querySelectorAll(".btn");
-    const overlayTitle = document.getElementById("title");
-    const overlayFlag = document.getElementById("flag");
 
     buttons.forEach((button) => {
-      button.addEventListener("mouseenter", () => {
-        cursor.textContent = button.dataset.country;
-        tl.play();
-      });
-
-      button.addEventListener("mouseleave", () => {
-        cursor.textContent = "";
-        tl.reverse();
-      });
-
       button.addEventListener("click", () => {
         tl2.reversed(!tl2.reversed());
       });
@@ -37,8 +27,6 @@ export default function Contact() {
       cursor.textContent = "";
       tl.reverse();
     });
-
-    const tl2 = gsap.timeline({ paused: true });
 
     function resetInputs() {
       setTimeout(() => {
@@ -112,52 +100,6 @@ export default function Contact() {
               Laboriosam dolorem unde et! Voluptatum repudiandae inventore quasi
               ipsum repellendus aut quam.
             </p>
-          </div>
-        </div>
-
-        {/* <!-- actual stuff --> */}
-        <div className="items">
-          <div className="item">
-            <button className="btn" id="btn1" data-country="🇺🇸">
-              usa
-            </button>
-          </div>
-          <div className="item">
-            <button className="btn" data-country="🇮🇹">
-              italy
-            </button>
-          </div>
-          <div className="item">
-            <button className="btn" data-country="🇨🇦">
-              canada
-            </button>
-          </div>
-          <div className="item">
-            <button className="btn" data-country="🇦🇺">
-              australia
-            </button>
-          </div>
-        </div>
-        <div className="items">
-          <div className="item">
-            <button className="btn" data-country="🇬🇧">
-              uk
-            </button>
-          </div>
-          <div className="item">
-            <button className="btn" data-country="🇧🇷">
-              brazil
-            </button>
-          </div>
-          <div className="item">
-            <button className="btn" data-country="🇹🇷">
-              turkey
-            </button>
-          </div>
-          <div className="item">
-            <button className="btn" data-country="🇨🇭">
-              switzerland
-            </button>
           </div>
         </div>
       </div>

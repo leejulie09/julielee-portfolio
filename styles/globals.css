@@ -7,7 +7,6 @@
 html,
 body {
   width: 100vw;
-  /* width: 100%; */
   height: 100vh;
   overflow: hidden;
   background: #000;
@@ -19,7 +18,6 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  /* background: #fff; */
 }
 
 .navbar {
@@ -36,71 +34,6 @@ body {
   font-size: 18px;
   color: #000;
 }
-
-/* .header {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 80px;
-  font-weight: 400;
-  text-transform: uppercase;
-  text-align: center;
-} */
-/* 
-#menu-toggle-btn {
-  margin-top: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20px;
-  width: 20px;
-  position: relative;
-  cursor: pointer;
-  transition: all 0.3s;
-  z-index: 10000;
-}
-
-.menu-toggle span {
-  height: 2px;
-  background: #000;
-  width: 24px;
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  transition: all 0.3s;
-}
-
-.menu-toggle span::before {
-  content: " ";
-  position: absolute;
-  display: inline-block;
-  height: 2px;
-  background: #000;
-  transform: translateY(-4px);
-  width: 24px;
-  transition: all 0.3s;
-}
-
-.menu-toggle span::before {
-  top: -2px;
-}
-
-.active span {
-  transform: rotate(45deg);
-  background: #fff;
-}
-
-.active span::before {
-  top: unset;
-  transform: rotate(-90deg);
-  background: #fff;
-}
-
-.active:hover span::before {
-  top: unset;
-} */
 
 #nav-container {
   position: fixed;
@@ -377,7 +310,9 @@ body {
 }
 
 /* projects */
-
+.container-projects {
+  background: #fff;
+}
 .menu {
   position: absolute;
   left: 2em;
@@ -414,7 +349,7 @@ body {
   font-weight: 400;
   font-size: 4vw;
   line-height: 1;
-  color: #d1ccbc;
+  /* color: #d1ccbc; */
   opacity: 1;
   transition: opacity 350ms ease;
   white-space: nowrap;
@@ -429,66 +364,6 @@ body {
 
 .menu__item:hover .menu__item-image_wrapper {
   z-index: -2;
-}
-
-/* project */
-
-.img-gallery-container {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 10vh;
-}
-
-.img-gallery-container.order {
-  display: grid;
-  justify-content: stretch;
-  grid-auto-flow: row;
-  grid-auto-columns: 1fr;
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  grid-template-rows: auto auto;
-}
-
-.project-img {
-  position: relative;
-  margin-bottom: 1em;
-  width: 400px;
-  height: 500px;
-  overflow: hidden;
-}
-
-.img.reorder {
-  position: fixed;
-  top: 0;
-  margin: 1em;
-  width: 150px;
-  height: 200px;
-  margin-bottom: 0em;
-}
-
-img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  bottom: 0;
-}
-
-.btn {
-  width: 10em;
-  height: 5em;
-  z-index: 60;
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-family: "Neue Montreal";
 }
 
 /* contact */
