@@ -56,17 +56,8 @@ export default function Home() {
     <div className="home-container">
       <div className="navbar">
         <div className="site-logo">Julie</div>
-        {/* <div className="menu-toggle">
-          <div id="menu-toggle-btn">
-            <span></span>
-          </div>
-        </div> */}
       </div>
-      {/* <div className="header">
-        We transform <br />
-        ideas into digital <br />
-        outcomes
-      </div> */}
+
       <div id="nav-container">
         <div className="home-nav">
           <div className="col flex">
