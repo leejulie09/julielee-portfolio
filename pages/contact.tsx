@@ -77,16 +77,28 @@ export default function Contact() {
         <div className="copy">
           <div className="copy-wrapper">
             <h1>
-              &emsp;&emsp;Get
+              &emsp;&emsp;Send
               <br />
-              someone, <br />
-              &emsp;creative on <br />
-              your team.
+              an email <br />
+              &emsp;to Julie
+              <br />
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Laboriosam dolorem unde et! Voluptatum repudiandae inventore quasi
-              ipsum repellendus aut quam.
+              Get in touch - leejulie09@gmail.com
+              <br />
+              <br />
+              <a href="https://selonjulie.tistory.com/" target="_blank">
+                Blog
+              </a>
+              <br />
+              <a href="https://github.com/leejulie09" target="_blank">
+                Github
+              </a>
+              <br />
+              <a href="https://www.linkedin.com/in/leejulie09/" target="_blank">
+                LinkedIn
+              </a>
+              <br />
             </p>
           </div>
         </div>
@@ -100,12 +112,7 @@ export default function Contact() {
           <div className="form">
             <input type="text" placeholder="Your Name" />
             <input type="text" placeholder="Your Email" />
-            <textarea
-              name=""
-              id=""
-              rows="5"
-              placeholder="Interested in hiring a creative front end developer with 3 years of experience and I would like more info"
-            ></textarea>
+            <textarea name="" id="" rows="5" placeholder="Message"></textarea>
           </div>
           <div className="form-action">
             <label className="checkmark-wrapper">
