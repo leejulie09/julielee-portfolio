@@ -9,7 +9,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: #000;
+  background: #fff;
 }
 
 /* home */
@@ -311,12 +311,14 @@ body {
 
 /* projects */
 .container-projects {
-  background: #fff;
+  background-color: white;
 }
 .menu {
   position: absolute;
   left: 2em;
   bottom: 2em;
+  background-color: white;
+  z-index: 100000;
 }
 
 .menu__item {

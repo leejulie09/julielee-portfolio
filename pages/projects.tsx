@@ -67,7 +67,10 @@ export default function Projects() {
         <div className="menu__item">
           <div className="menu__item-image_wrapper">
             <div className="menu__item-image_inner">
-              <img className="menu__item-image" src="assets/img_01.png" />
+              <img
+                className="menu__item-image"
+                src="assets/educere_board.png"
+              />
             </div>
           </div>
           <span className="menu__item-text">
@@ -80,7 +83,7 @@ export default function Projects() {
         <div className="menu__item">
           <div className="menu__item-image_wrapper">
             <div className="menu__item-image_inner">
-              <img className="menu__item-image" src="assets/img_03.jpeg" />
+              <img className="menu__item-image" src="assets/wanted_chart.png" />
             </div>
           </div>
           <span className="menu__item-text">
@@ -92,7 +95,10 @@ export default function Projects() {
         <div className="menu__item">
           <div className="menu__item-image_wrapper">
             <div className="menu__item-image_inner">
-              <img className="menu__item-image" src="assets/img_05.jpeg" />
+              <img
+                className="menu__item-image"
+                src="assets/fanddle_mypage.png"
+              />
             </div>
           </div>
           <span className="menu__item-text">
@@ -104,7 +110,10 @@ export default function Projects() {
         <div className="menu__item">
           <div className="menu__item-image_wrapper">
             <div className="menu__item-image_inner">
-              <img className="menu__item-image" src="assets/img_05.jpeg" />
+              <img
+                className="menu__item-image"
+                src="assets/justcode_clone.png"
+              />
             </div>
           </div>
           <span className="menu__item-text">
