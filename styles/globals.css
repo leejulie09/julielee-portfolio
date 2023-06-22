@@ -370,37 +370,17 @@ body {
 
 /* contact */
 
-/* nav */
-.logo {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 2em;
-  z-index: 10000000;
-  mix-blend-mode: difference;
-}
-
-.logo a {
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bolder;
-  color: #c0b1b1;
-  font-family: "Voyage";
-  line-height: 1;
-}
-
 .container-contact {
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 /* copy */
 
 .copy {
-  width: 40vw;
+  width: 60vw;
   padding: 2em;
   display: flex;
   align-items: center;
@@ -426,16 +406,6 @@ body {
 }
 
 /* actual stuff */
-
-.items {
-  width: 20vw;
-  padding: 2em;
-}
-
-.item {
-  margin: 2rem 0;
-  line-height: 0.8;
-}
 
 button {
   position: relative;
@@ -691,20 +661,6 @@ textarea:hover {
     height: 100%;
     flex-direction: column;
     justify-content: normal;
-  }
-
-  .copy,
-  .items {
-    width: 100vw !important;
-  }
-
-  .items {
-    padding: 0 1em;
-    align-items: center;
-  }
-
-  .item {
-    align-items: center;
   }
 
   .copy {

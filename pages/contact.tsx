@@ -7,13 +7,12 @@ export default function Contact() {
   useLayoutEffect(() => {
     const cursor = document.getElementById("cursor");
     const tl = gsap.timeline({ paused: true });
-    const tl2 = gsap.timeline({ paused: false });
-
     tl.to(cursor, { duration: 0.2, scale: 1.5, opacity: 1 });
 
     const buttons = document.querySelectorAll(".btn");
 
     buttons.forEach((button) => {
+      //form나오게 하는 애니메이션
       button.addEventListener("click", () => {
         tl2.reversed(!tl2.reversed());
       });
@@ -27,6 +26,8 @@ export default function Contact() {
       cursor.textContent = "";
       tl.reverse();
     });
+
+    const tl2 = gsap.timeline({ paused: true });
 
     function resetInputs() {
       setTimeout(() => {
@@ -44,16 +45,7 @@ export default function Contact() {
 
     function openNav() {
       animateOpenNav();
-      const closeBtn = document.getElementById("close-btn");
       const submit = document.getElementById("submit");
-      closeBtn.onclick = function (e) {
-        tl2.reversed(!tl2.reversed());
-        resetInputs();
-      };
-      submit.onclick = function (e) {
-        tl2.reversed(!tl2.reversed());
-        resetInputs();
-      };
     }
 
     openNav();
@@ -76,16 +68,12 @@ export default function Contact() {
         )
         .reverse();
     }
+
+    tl2.play();
   });
   return (
     <div>
-      {/* <!-- nav --> */}
-      <div className="logo">
-        <a href="#">The Hiring Chain</a>
-      </div>
-
-      <div className="container">
-        {/* <!-- copy --> */}
+      <div className="container-contact">
         <div className="copy">
           <div className="copy-wrapper">
             <h1>
@@ -104,11 +92,10 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* <!-- overlay (form) --> */}
       <div className="overlay">
-        <div className="close-btn" id="close-btn">
+        {/* <div className="close-btn" id="close-btn">
           <ion-icon name="close-outline"></ion-icon>
-        </div>
+        </div> */}
         <div className="overlay-copy">
           <div className="form">
             <input type="text" placeholder="Your Name" />
@@ -132,7 +119,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      {/* <!-- phew.. overlay ends  --> */}
       <div id="cursor"></div>
     </div>
   );
