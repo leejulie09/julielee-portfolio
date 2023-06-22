@@ -109,21 +109,28 @@ export default function Contact() {
           <ion-icon name="close-outline"></ion-icon>
         </div> */}
         <div className="overlay-copy">
-          <div className="form">
-            <input type="text" placeholder="Your Name" />
-            <input type="text" placeholder="Your Email" />
-            <textarea name="" id="" rows="5" placeholder="Message"></textarea>
-          </div>
-          <div className="form-action">
-            <label className="checkmark-wrapper">
-              <span>I accept Privacy Policy</span>
-              <input type="checkbox" />
-              <span className="checkmark"></span>
-            </label>
-            <div className="submit-btn">
-              <button id="submit">Submit</button>
+          <form
+            className="gform"
+            method="POST"
+            data-email="leejulie09@gmail.com"
+            action="https://script.google.com/macros/s/AKfycby91Optx3rI-98w-FVWWDYujiNQCfMoeaMi_7tEsxSoYh563h3mfJwl4MfRT-qZywtFqg/exec"
+          >
+            <div className="form">
+              <input type="text" placeholder="Your Name" />
+              <input type="text" placeholder="Your Email" />
+              <textarea name="" id="" rows="5" placeholder="Message"></textarea>
             </div>
-          </div>
+            <div className="form-action">
+              <label className="checkmark-wrapper">
+                <span>I accept Privacy Policy</span>
+                <input type="checkbox" />
+                <span className="checkmark"></span>
+              </label>
+              <div className="submit-btn">
+                <button id="submit">Submit</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
       <div id="cursor"></div>
