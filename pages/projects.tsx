@@ -67,75 +67,57 @@ export default function Projects() {
         <div className="menu__item">
           <div className="menu__item-image_wrapper">
             <div className="menu__item-image_inner">
-              <img className="menu__item-image" src="assets/img_01.png" />
+              <img
+                className="menu__item-image"
+                src="assets/educere_board.png"
+              />
             </div>
           </div>
           <span className="menu__item-text">
-            <span className="menu__item-innertext">Impulse /</span>
+            <span className="menu__item-innertext">Educere</span>
           </span>
         </div>
 
-        <div className="menu__item">
-          <div className="menu__item-image_wrapper">
-            <div className="menu__item-image_inner">
-              <img className="menu__item-image" src="assets/img_02.png" />
-            </div>
-          </div>
-          <span className="menu__item-text">
-            <span className="menu__item-innertext">&nbsp;Rubber</span>
-          </span>
-        </div>
         <br />
 
         <div className="menu__item">
           <div className="menu__item-image_wrapper">
             <div className="menu__item-image_inner">
-              <img className="menu__item-image" src="assets/img_03.jpeg" />
+              <img className="menu__item-image" src="assets/wanted_chart.png" />
             </div>
           </div>
           <span className="menu__item-text">
-            <span className="menu__item-innertext">PU /</span>
+            <span className="menu__item-innertext">Wanted PreOnboarding</span>
           </span>
         </div>
-        <div className="menu__item">
-          <div className="menu__item-image_wrapper">
-            <div className="menu__item-image_inner">
-              <img className="menu__item-image" src="assets/img_04.png" />
-            </div>
-          </div>
-          <span className="menu__item-text">
-            <span className="menu__item-innertext">&nbsp;Technopolymers</span>
-          </span>
-        </div>
+
         <br />
         <div className="menu__item">
           <div className="menu__item-image_wrapper">
             <div className="menu__item-image_inner">
-              <img className="menu__item-image" src="assets/img_05.jpeg" />
+              <img
+                className="menu__item-image"
+                src="assets/fanddle_mypage.png"
+              />
             </div>
           </div>
           <span className="menu__item-text">
-            <span className="menu__item-innertext">Relife /</span>
+            <span className="menu__item-innertext">Fanagement </span>
           </span>
         </div>
+
+        <br />
         <div className="menu__item">
           <div className="menu__item-image_wrapper">
             <div className="menu__item-image_inner">
-              <img className="menu__item-image" src="assets/img_06.png" />
+              <img
+                className="menu__item-image"
+                src="assets/justcode_clone.png"
+              />
             </div>
           </div>
           <span className="menu__item-text">
-            <span className="menu__item-innertext">&nbsp;TPU /</span>
-          </span>
-        </div>
-        <div className="menu__item">
-          <div className="menu__item-image_wrapper">
-            <div className="menu__item-image_inner">
-              <img className="menu__item-image" src="assets/img_07.png" />
-            </div>
-          </div>
-          <span className="menu__item-text">
-            <span className="menu__item-innertext">&nbsp;EVA</span>
+            <span className="menu__item-innertext">Bootcamp </span>
           </span>
         </div>
       </nav>

@@ -10,20 +10,9 @@ export default function Contact() {
     tl.to(cursor, { duration: 0.2, scale: 1.5, opacity: 1 });
 
     const buttons = document.querySelectorAll(".btn");
-    const overlayTitle = document.getElementById("title");
-    const overlayFlag = document.getElementById("flag");
 
     buttons.forEach((button) => {
-      button.addEventListener("mouseenter", () => {
-        cursor.textContent = button.dataset.country;
-        tl.play();
-      });
-
-      button.addEventListener("mouseleave", () => {
-        cursor.textContent = "";
-        tl.reverse();
-      });
-
+      //form나오게 하는 애니메이션
       button.addEventListener("click", () => {
         tl2.reversed(!tl2.reversed());
       });
@@ -56,16 +45,7 @@ export default function Contact() {
 
     function openNav() {
       animateOpenNav();
-      const closeBtn = document.getElementById("close-btn");
       const submit = document.getElementById("submit");
-      closeBtn.onclick = function (e) {
-        tl2.reversed(!tl2.reversed());
-        resetInputs();
-      };
-      submit.onclick = function (e) {
-        tl2.reversed(!tl2.reversed());
-        resetInputs();
-      };
     }
 
     openNav();
@@ -88,105 +68,51 @@ export default function Contact() {
         )
         .reverse();
     }
+
+    tl2.play();
   });
   return (
     <div>
-      {/* <!-- nav --> */}
-      <div className="logo">
-        <a href="#">The Hiring Chain</a>
-      </div>
-      {/* <div className="nav">
-        <div className="nav-items primary">
-          <a href="#" id="main-branch">
-            Hire Now
-          </a>
-          <a href="#">Share</a>
-        </div>
-        <div className="nav-items">
-          <a href="#">About</a>
-        </div>
-      </div> */}
-      <div className="container">
-        {/* <!-- copy --> */}
+      <div className="container-contact">
         <div className="copy">
           <div className="copy-wrapper">
             <h1>
-              &emsp;&emsp;Get
+              &emsp;&emsp;Send
               <br />
-              someone, <br />
-              &emsp;creative on <br />
-              your team.
+              an email <br />
+              &emsp;to Julie
+              <br />
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Laboriosam dolorem unde et! Voluptatum repudiandae inventore quasi
-              ipsum repellendus aut quam.
+              Get in touch - leejulie09@gmail.com
+              <br />
+              <br />
+              <a href="https://selonjulie.tistory.com/" target="_blank">
+                Blog
+              </a>
+              <br />
+              <a href="https://github.com/leejulie09" target="_blank">
+                Github
+              </a>
+              <br />
+              <a href="https://www.linkedin.com/in/leejulie09/" target="_blank">
+                LinkedIn
+              </a>
+              <br />
             </p>
-          </div>
-        </div>
-
-        {/* <!-- actual stuff --> */}
-        <div className="items">
-          <div className="item">
-            <button className="btn" id="btn1" data-country="🇺🇸">
-              usa
-            </button>
-          </div>
-          <div className="item">
-            <button className="btn" data-country="🇮🇹">
-              italy
-            </button>
-          </div>
-          <div className="item">
-            <button className="btn" data-country="🇨🇦">
-              canada
-            </button>
-          </div>
-          <div className="item">
-            <button className="btn" data-country="🇦🇺">
-              australia
-            </button>
-          </div>
-        </div>
-        <div className="items">
-          <div className="item">
-            <button className="btn" data-country="🇬🇧">
-              uk
-            </button>
-          </div>
-          <div className="item">
-            <button className="btn" data-country="🇧🇷">
-              brazil
-            </button>
-          </div>
-          <div className="item">
-            <button className="btn" data-country="🇹🇷">
-              turkey
-            </button>
-          </div>
-          <div className="item">
-            <button className="btn" data-country="🇨🇭">
-              switzerland
-            </button>
           </div>
         </div>
       </div>
 
-      {/* <!-- overlay (form) --> */}
       <div className="overlay">
-        <div className="close-btn" id="close-btn">
+        {/* <div className="close-btn" id="close-btn">
           <ion-icon name="close-outline"></ion-icon>
-        </div>
+        </div> */}
         <div className="overlay-copy">
           <div className="form">
             <input type="text" placeholder="Your Name" />
             <input type="text" placeholder="Your Email" />
-            <textarea
-              name=""
-              id=""
-              rows="5"
-              placeholder="Interested in hiring a creative front end developer with 3 years of experience and I would like more info"
-            ></textarea>
+            <textarea name="" id="" rows="5" placeholder="Message"></textarea>
           </div>
           <div className="form-action">
             <label className="checkmark-wrapper">
@@ -200,7 +126,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      {/* <!-- phew.. overlay ends  --> */}
       <div id="cursor"></div>
     </div>
   );
