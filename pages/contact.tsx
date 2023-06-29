@@ -25,6 +25,8 @@ export default function Contact() {
           console.log("error", error.text);
         }
       );
+    alert("메세지가 정상적으로 송부되었습니다. 감사합니다");
+    event.target.reset();
   };
 
   useLayoutEffect(() => {
