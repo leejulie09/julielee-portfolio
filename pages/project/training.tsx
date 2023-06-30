@@ -2,8 +2,6 @@ import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Flip } from "gsap/Flip";
 
-gsap.registerPlugin(Flip);
-
 export default function Training() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -33,7 +31,7 @@ export default function Training() {
       <div ref={ref} className="img-gallery" data-scroll-container>
         <div className="img-gallery-container" data-scroll>
           <div className="img">
-            <img src="./images/img-1.png" />
+            <img src="assets/fanddle_mypage.png" alt="fanddle" />
           </div>
           <div className="img">
             <img src="./images/img-2.png" />
