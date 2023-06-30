@@ -80,7 +80,7 @@ export default function Home() {
               <div className="nav-item-wrapper"></div>
             </div>
             <div className="nav-link">
-              <Link href="/projects">Work</Link>
+              <Link href="/projects">Projects</Link>
               <div className="nav-item-wrapper"></div>
             </div>
             <div className="nav-link">

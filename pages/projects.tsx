@@ -87,37 +87,7 @@ export default function Projects() {
             </div>
           </div>
           <span className="menu__item-text">
-            <span className="menu__item-innertext">Wanted PreOnboarding</span>
-          </span>
-        </div>
-
-        <br />
-        <div className="menu__item">
-          <div className="menu__item-image_wrapper">
-            <div className="menu__item-image_inner">
-              <img
-                className="menu__item-image"
-                src="assets/fanddle_mypage.png"
-              />
-            </div>
-          </div>
-          <span className="menu__item-text">
-            <span className="menu__item-innertext">Fanagement </span>
-          </span>
-        </div>
-
-        <br />
-        <div className="menu__item">
-          <div className="menu__item-image_wrapper">
-            <div className="menu__item-image_inner">
-              <img
-                className="menu__item-image"
-                src="assets/justcode_clone.png"
-              />
-            </div>
-          </div>
-          <span className="menu__item-text">
-            <span className="menu__item-innertext">Bootcamp </span>
+            <span className="menu__item-innertext">Training</span>
           </span>
         </div>
       </nav>

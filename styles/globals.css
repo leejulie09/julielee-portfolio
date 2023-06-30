@@ -8,7 +8,7 @@ html,
 body {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: #fff;
 }
 
@@ -368,7 +368,7 @@ body {
   z-index: -2;
 }
 
-/* project-educere */
+/* project-training */
 
 .img-gallery-container {
   width: 100vw;
@@ -377,6 +377,7 @@ body {
   align-items: center;
   justify-content: center;
   padding-top: 10vh;
+  overflow: scroll;
 }
 
 .img-gallery-container.order {
