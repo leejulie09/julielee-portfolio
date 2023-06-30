@@ -360,7 +360,12 @@ body {
   transition: 0.3s;
 }
 
-.menu__item:hover .menu__item-text {
+.menu__item-text a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu__item:hover .menu__item-text a {
   color: #c24628;
 }
 

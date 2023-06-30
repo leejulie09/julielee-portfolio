@@ -2,6 +2,7 @@
 
 import { useLayoutEffect } from "react";
 import gsap from "gsap";
+import Link from "next/link";
 
 export default function Projects() {
   useLayoutEffect(() => {
@@ -74,7 +75,9 @@ export default function Projects() {
             </div>
           </div>
           <span className="menu__item-text">
-            <span className="menu__item-innertext">Educere</span>
+            <span className="menu__item-innertext">
+              <Link href="/project/educere">Educere</Link>
+            </span>
           </span>
         </div>
 
@@ -83,11 +86,16 @@ export default function Projects() {
         <div className="menu__item">
           <div className="menu__item-image_wrapper">
             <div className="menu__item-image_inner">
-              <img className="menu__item-image" src="assets/wanted_chart.png" />
+              <img
+                className="menu__item-image"
+                src="assets/fanddle_mypage.png"
+              />
             </div>
           </div>
           <span className="menu__item-text">
-            <span className="menu__item-innertext">Training</span>
+            <span className="menu__item-innertext">
+              <Link href="/project/training">Training</Link>
+            </span>
           </span>
         </div>
       </nav>
