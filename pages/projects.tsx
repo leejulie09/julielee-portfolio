@@ -27,7 +27,10 @@ export default function Projects() {
 
     menuItems.forEach((item) => {
       const imageWrapper = item.querySelector(".menu__item-image_wrapper");
-      const imageWrapperBounds = imageWrapper.getBoundingClientRect();
+      let imageWrapperBounds: DOMRect | ClientRect | null = null;
+      if (imageWrapper) {
+        imageWrapperBounds = imageWrapper.getBoundingClientRect();
+      }
       let itemBounds = item.getBoundingClientRect();
 
       const onMouseEnter = () => {
@@ -44,17 +47,19 @@ export default function Projects() {
         });
       };
 
-      const onMouseMove = ({ x, y }) => {
-        let yOffset = itemBounds.top / imageWrapperBounds.height;
-        yOffset = gsap.utils.mapRange(0, 1.5, -150, 150, yOffset);
-        gsap.to(imageWrapper, {
-          duration: 1.25,
-        });
+      const onMouseMove = (evt: Event) => {
+        if (imageWrapper && imageWrapperBounds?.height) {
+          let yOffset = itemBounds.top / imageWrapperBounds.height;
+          yOffset = gsap.utils.mapRange(0, 1.5, -150, 150, yOffset);
+          gsap.to(imageWrapper, {
+            duration: 1.25,
+          });
+        }
       };
 
       item.addEventListener("mouseenter", onMouseEnter);
       item.addEventListener("mouseleave", onMouseLeave);
-      item.addEventListener("mousemove", onMouseMove);
+      item.addEventListener("mousemove", onMouseMove as EventListener);
 
       window.addEventListener("resize", () => {
         itemBounds = item.getBoundingClientRect();
