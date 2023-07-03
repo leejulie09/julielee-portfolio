@@ -1,9 +1,34 @@
 "use client";
 
-import { use, useLayoutEffect } from "react";
+import { use, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const form = useRef();
+
+  const onSubmitForm = (event) => {
+    event.preventDefault();
+
+    emailjs
+      .sendForm(
+        "julie_portfolio",
+        "template_xo56gwl",
+        form.current,
+        "kb9w0CWTcwqy-6gwV"
+      )
+      .then(
+        (result) => {
+          console.log("successful!", result);
+        },
+        (error) => {
+          console.log("error", error.text);
+        }
+      );
+    alert("메세지가 정상적으로 송부되었습니다. 감사합니다");
+    event.target.reset();
+  };
+
   useLayoutEffect(() => {
     const cursor = document.getElementById("cursor");
     const tl = gsap.timeline({ paused: true });
@@ -105,20 +130,17 @@ export default function Contact() {
       </div>
 
       <div className="overlay">
-        {/* <div className="close-btn" id="close-btn">
-          <ion-icon name="close-outline"></ion-icon>
-        </div> */}
         <div className="overlay-copy">
-          <form
-            className="gform"
-            method="POST"
-            data-email="leejulie09@gmail.com"
-            action="https://script.google.com/macros/s/AKfycby91Optx3rI-98w-FVWWDYujiNQCfMoeaMi_7tEsxSoYh563h3mfJwl4MfRT-qZywtFqg/exec"
-          >
+          <form ref={form} onSubmit={onSubmitForm}>
             <div className="form">
-              <input type="text" placeholder="Your Name" />
-              <input type="text" placeholder="Your Email" />
-              <textarea name="" id="" rows="5" placeholder="Message"></textarea>
+              <input name="user_name" type="text" placeholder="Your Name" />
+              <input name="user_email" type="email" placeholder="Your Email" />
+              <textarea
+                name="message"
+                id=""
+                rows="5"
+                placeholder="Message"
+              ></textarea>
             </div>
             <div className="form-action">
               <label className="checkmark-wrapper">
