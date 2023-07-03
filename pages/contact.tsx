@@ -5,32 +5,33 @@ import gsap from "gsap";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
 
-  const onSubmitForm = (event) => {
+  const onSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    emailjs
-      .sendForm(
-        "julie_portfolio",
-        "template_xo56gwl",
-        form.current,
-        "kb9w0CWTcwqy-6gwV"
-      )
-      .then(
-        (result) => {
-          console.log("successful!", result);
-        },
-        (error) => {
-          console.log("error", error.text);
-        }
-      );
-    alert("메세지가 정상적으로 송부되었습니다. 감사합니다");
-    event.target.reset();
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "julie_portfolio",
+          "template_xo56gwl",
+          form.current,
+          "kb9w0CWTcwqy-6gwV"
+        )
+        .then(
+          (result) => {
+            console.log("successful!", result);
+          },
+          (error) => {
+            console.log("error", error.text);
+          }
+        );
+      alert("메세지가 정상적으로 송부되었습니다. 감사합니다");
+      (event.target as HTMLFormElement).reset();
+    }
   };
 
   useLayoutEffect(() => {
-    const cursor = document.getElementById("cursor");
+    const cursor = document.getElementById("cursor")!;
     const tl = gsap.timeline({ paused: true });
     tl.to(cursor, { duration: 0.2, scale: 1.5, opacity: 1 });
 
@@ -53,20 +54,6 @@ export default function Contact() {
     });
 
     const tl2 = gsap.timeline({ paused: true });
-
-    function resetInputs() {
-      setTimeout(() => {
-        document
-          .querySelectorAll(".form input, .form textarea")
-          .forEach((input) => {
-            input.value = "";
-          });
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach((checkbox) => {
-          checkbox.checked = false;
-        });
-      }, 2000);
-    }
 
     function openNav() {
       animateOpenNav();
@@ -138,7 +125,7 @@ export default function Contact() {
               <textarea
                 name="message"
                 id=""
-                rows="5"
+                rows={Number("5")}
                 placeholder="Message"
               ></textarea>
             </div>
