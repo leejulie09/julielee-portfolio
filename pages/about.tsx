@@ -56,31 +56,6 @@ export default function Home() {
 
   return (
     <>
-      <div className="website-content">
-        <div className="navbar">
-          <div className="logo">
-            Chiara
-            <br />
-            Luzzana
-          </div>
-          <div className="menu-icon">Menu</div>
-        </div>
-        <div className="site-header">
-          <div className="row">
-            <div className="header-row">
-              <span>the</span>purity
-            </div>
-            <div className="header-row-wrapper"></div>
-          </div>
-          <div className="row">
-            <div className="header-row">
-              <span>of</span>noise
-            </div>
-            <div className="header-row-wrapper"></div>
-          </div>
-        </div>
-        <div className="footer-about">"Everyday life is her sound"</div>
-      </div>
       <div className="pre-loader">
         <div className="pre-loader-container">
           <div className="pre-loader-header">
