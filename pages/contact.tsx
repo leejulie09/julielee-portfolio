@@ -91,12 +91,13 @@ export default function Contact() {
             <h1>
               &emsp;&emsp;Send
               <br />
-              an email <br />
+              &nbsp; an email <br />
               &emsp;to Julie
               <br />
             </h1>
             <p>
-              Get in touch - leejulie09@gmail.com
+              Get in touch -{" "}
+              <a href="mailto :leejulie09@gmail.com"> leejulie09@gmail.com </a>
               <br />
               <br />
               <a href="https://selonjulie.tistory.com/" target="_blank">
